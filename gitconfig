@@ -1,6 +1,8 @@
 [user]
-	name = Ory Band
-	email = oryband@gmail.com
+	name = Eldar Damari
+	email = eldar.damari@gmail.com
+[push]
+	default = simple
 [credential]
     helper = cache --timeout=3600
 [apply]
