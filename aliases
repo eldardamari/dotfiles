@@ -18,3 +18,4 @@ alias lla="ls -al"  # show hidden files, with -l.
 alias grep="grep --color=auto -I"  # Colorful, skipping binary files.
 alias less="less -R"  # Colorful less.
 alias ghci="ghci-color"
+alias sml="/usr/local/Cellar/rlwrap/0.37/bin/rlwrap /usr/local/Cellar/smlnj/110.75/bin/sml"

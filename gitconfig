@@ -57,3 +57,5 @@
 	;reb = "!r() { git rebase -i HEAD~$1; }; r"
 	# Undo a `git push`
 	;undopush = push -f origin HEAD^:master
+[push]
+	default = simple

@@ -54,7 +54,7 @@ export EDITOR="vim"
 export VISUAL=$EDITOR
 
 # My specific machine stuff.
-if [ `hostname -s` == "Ory" ]; then
+if [ `hostname -s` == "Eldar" ]; then
     # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
     alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
 
@@ -65,3 +65,12 @@ if [ `hostname -s` == "Ory" ]; then
     PATH="/usr/local/share/npm/bin:$PATH"  # Node/npm
     export PATH
 fi
+
+##
+# Your previous /Users/eldardamari/.bash_profile file was backed up as /Users/eldardamari/.bash_profile.macports-saved_2014-03-08_at_21:31:45
+##
+
+# MacPorts Installer addition on 2014-03-08_at_21:31:45: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
