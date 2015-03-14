@@ -58,9 +58,9 @@ if [ `hostname -s` == "Eldar" ]; then
     # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
     alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
 
+    PATH="/usr/local/Cellar/ruby/HEAD/bin:$PATH"  # Ruby
     PATH="/usr/local/bin:/usr/local/sbin:$PATH"   # Give priority to Homebrew's bin & sbin dirs on top of the system's dirs.
     PATH="/usr/local/share/python:$PATH"          # Add Homebrew's Python to $PATH, before the system's Python.
-    PATH="/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH"  # Ruby
     PATH="$HOME/.cabal/bin:$PATH"  # Haskell
     PATH="/usr/local/share/npm/bin:$PATH"  # Node/npm
     export PATH
@@ -71,6 +71,39 @@ fi
 ##
 
 # MacPorts Installer addition on 2014-03-08_at_21:31:45: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH
+export PATH=/usr/local/Cellar/ruby/HEAD/bin:$PATH  # Ruby
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$PATH:/usr/local/sbin
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+##
+# Your previous /Users/eldardamari/.bash_profile file was backed up as /Users/eldardamari/.bash_profile.macports-saved_2014-05-24_at_12:41:32
+##
+
+# MacPorts Installer addition on 2014-05-24_at_12:41:32: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+#when installed - To enable shims and autocompletion add to your profile:
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export JAVA_OPTS="-Xms2048m -Xmx4096m"
+
+# postgres lang support
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export JDK_HOME=$(/usr/libexec/java_home)
+
+if [ -f /etc/bash_completion ]; then
+. /etc/bash_completion
+fi
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='\[\033[01;32m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
